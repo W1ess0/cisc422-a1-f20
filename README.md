@@ -119,7 +119,7 @@ It also contains the class [<tt>Main</tt>](src/main/java/Main.java) which
 
 
 ### Running the provided evaluator code
-The address of the repository is <tt>https://github.com/CISC422/a1</tt>. Use your favourite means to clone it and create a local copy. If you are unfamiliar with GitHub and don't know how to do this, please see the [GitHub Classroom Quick Start pages](https://github.com/CISC422/classroom-quickstart). 
+Use your favourite means to clone and create a local copy of this repository. If you are unfamiliar with GitHub and don't know how to do this, please see the [GitHub Classroom Quick Start pages](https://github.com/CISC422/classroom-quickstart). 
 Using Git-Bash, the following will clone, build, and run all unit tests in [<tt>src/test/java</tt>](src/test/java).
 
 ```$xslt
@@ -158,7 +158,7 @@ In general, the evaluation will require a traversal of the AST. We suggest that 
 - <b>Step 1: No variables, atomic formulas and expressions only</b><br>
   First, assume that the input to be evaluated does not contain any variables and is atomic, as in, for instance, <tt>Day=Prod</tt>, <tt>1&gt;3</tt>, <tt>42</tt>, <tt>Sale</tt>, or <tt>salesForM(M)</tt>. In this case, your implementation of <tt>evalFormula</tt>, <tt>evalNExp</tt>, and <tt>evalSExp</tt> should be straight-forward with symbols denoting numbers (such as <tt>42</tt>) or relational operators comparing them (see non-terminal <tt>&lt;RelNOp&gt;</tt> in grammar) having their standard meaning. As mentioned above, the numeric expression <tt>salesForM(M)</tt> should evaluate to the sum of all sales amount of all products on all days, while the atomic set expressions <tt>Day</tt>, <tt>Prod</tt>, and <tt>Sale</tt> should evaluate to, respectively, the set of days, products, and sales amounts occuring in the input sales array. 
 - <b>Step 2: No variables, atomic formulas and set expressions, but composite numeric expressions</b>  
-    Add support for composite numeric expressions such as <tt>1+2</tt>, <tt>(2*(3+4))/3</tt>, <tt>1+M[5-3,2]</tt>, <tt>salesForD(M,2*3)</tt>, and <tt>salesForP(M,3)</tt>. The arithmetic operators (see <tt>&lt;BinNOp&gt;</tt> in grammar) should have their standard meaning with <tt>'/'</tt> representing truncating division on natural numbers (e.g., <tt>5/2</tt> should evaluate to 2). <tt>salesForD</tt> shoud evaluate to the sum of the sales amounts for all products on a given day. Similarly for <tt>salesForP</tt>. 
+    Add support for composite numeric expressions such as <tt>1+2</tt>, <tt>(2*(3+4))/3</tt>, <tt>1+M[5-3,2]</tt>, <tt>salesForD(M,2*3)</tt>, and <tt>salesForP(M,3)</tt>. The arithmetic operators (see <tt>&lt;BinNOp&gt;</tt> in grammar) should have their standard meaning with <tt>'/'</tt> representing truncating division on natural numbers (e.g., <tt>5/2</tt> should evaluate to 2). <tt>salesForD</tt> should evaluate to the sum of the sales amounts for all products on a given day. Similarly for <tt>salesForP</tt>. 
 - <b>Step 3: No variables, atomic formulas, but composite numeric expressions and composite set expressions (w/o set comprehension)</b>  
     Add support for composite set expressions such as <tt>Day + Prod</tt>, and <tt>(Sale - Day) &amp; Prod</tt> where the set operators (see <tt>&lt;BinSOp&gt;</tt> in grammar) should have their standard meaning.
 - <b>Step 4: No variables, but composite formulas and expressions (w/o set comprehension)</b>  
