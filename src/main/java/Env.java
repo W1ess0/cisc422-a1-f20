@@ -1,8 +1,9 @@
-import java.util.EmptyStackException;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.NoSuchElementException;
 
 public class Env {
-    Stack<VarValue> stack = new Stack<>();
+    Deque<VarValue> stack = new ArrayDeque<>();
 
     /**
      * Pushes a new variable onto the stack
@@ -15,7 +16,7 @@ public class Env {
 
     /**
      * Remove the variable on top of the stack
-     * @throws EmptyStackException if the stack is empty
+     * @throws NoSuchElementException if the stack is empty
      */
     void pop() {
         stack.pop();
